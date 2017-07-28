@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Trivia Game">
+	<meta name="author" content="Mitali Naik">
+	
+	<title>question game</title>
+
+	<!--Bootstrap CDN-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!--Google Font-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,600i,700|Open+Sans" rel="stylesheet">
+	<!--External Stylesheet-->
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+
+</head>
+<body>
+
+<!-- Arrow hover -->
+<a href="index.html"><svg version="1.1" id="arrow_hover" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="80px" height="80px"
+	 viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
+<g>  
+<g transform="translate(-6.918 0)">  
+<line x1="19.3" y1="19.3" x2="32.728" y2="32.728">
+</line>
+<line x1="32.728" y1="7.272" x2="19.3" y2="20.3">
+</line>
+<line x1="20" y1="20" x2="52" y2="20">
+  <animate 
+    attributeName="x2"
+    dur="0.1s"
+    begin="rectar.mouseover"
+    values="52; 60;"
+    keyTimes="0; 1"
+    repeatCount="1"
+    fill="freeze"
+    />
+    <animate 
+    attributeName="x2"
+    dur="0.1s"
+    begin="rectar.mouseout"
+    values="60; 52;"
+    keyTimes="0; 1"
+    repeatCount="1"
+    fill="freeze"
+    />
+</line>
+</g>
+    <animateTransform 
+    attributeName="transform" 
+    attributeType="XML"
+    type="translate"
+    values="0 0; -4 0;"
+    keyTimes="0; 1"
+    dur="0.1s"
+    begin="rectar.mouseover"
+    repeatCount="1"
+    fill="freeze"
+    id="animar"
+    restart="whenNotActive"
+    />
+    <animateTransform 
+    attributeName="transform" 
+    attributeType="XML"
+    type="translate"
+    values="-4 0; 0 0;"
+    keyTimes="0; 1"
+    dur="0.1s"
+    begin="rectar.mouseout"
+    repeatCount="1"
+    fill="freeze"
+    />
+</g>
+<rect x="0" y="0" height="20" width="20" opacity="0" id="rectar"/>
+</svg>
+</a>
+
+
+<!--wrapper around page content to set margins-->
+<div class="fullPageContain">
+
+<!--jumbotrons with headings for start & game pages-->
+<div class="row">
+<div class="span12">
+ <div class='content'>
+    <div class="jumbotron center-block" id="startJumbo">
+      <div class=" text-center">
+		
+        <button class="button" type="button" href= index.html data-hover="&#x022C6;Random Questions for Random People&#x022C6;" data-active="Rematch"><span><h2>Query</h2></span></button>
+      </div>
+   </div>
+</div>
+
+
+<div class="row">
+<div class="span12">
+ <div class='content'>
+    <div class="jumbotron center-block" id="gameJumbo">
+
+        <h1>Question &#x022C6; <span class="numbers"></span> &#x022C6; <button class="text-center btn btn-default" value="show/hide" id="restartPlaceholder">START OVER</button></h1>
+
+      </div>
+   </div>
+</div>
+
+
+<!--start page panel-->
+	<div class="row">
+
+				<div class="panel panel-default center-block" id="panelButton">
+				<div class="span12 text-center">
+				<button class="text-center btn btn-default" value="show/hide" id="begin">PLAY</button>
+				</div>
+				</div>
+				
+				<div class="span12 text-center">
+				<img src="assets/images/mark.gif" id="questionmark">
+				</div>
+
+<!--main game panel-->
+				<div class="panel panel-warning center-block" id="gamePanel">
+				<div id="gameStart">	
+				
+					<div class="panel-heading center-block">
+					<p class="questions"></p>
+					</div>
+					
+					<button class="answers answer1"></button>
+					<button class="answers answer2"></button>
+					<button class="answers answer3"></button> 
+					<button class="answers answer4"></button> 
+				
+				<div class="span12 text-center">
+					<p class="timeRemaining">time remaining: <span id="time">20</span> SEC.</p>
+				</div>
+				</div>
+
+				<div id="divAnswers">
+				<hr>
+					<p id="wrongMsg">nope!</p>
+					<p id="correctMsg">right on right on!</p>
+					<p id="outOfTime">outta time!</p>
+					<p id="pCorrectAnswer">actually it was: <span></span></p>
+				<hr>
+				<div class="span12 text-center">
+					<p class="timeRemaining">time remaining: <span id="elapsedTime"></span>SEC.</p>
+				</div>	
+				</div>
+				</div>
+				<div class="panel panel-warning center-block" id="completePanel">
+				<div id="gameComplete">
+					<h3>game over!</h3>
+				<hr>
+					<p id="gameOverCorrect">correct answers: <span></span></p>
+					<p id="gameOverIncorrect">incorrect answers: <span></span></p>
+					<p id="unanswered">unanswered questions: <span></span></p>
+				<hr>
+					<button class="text-center btn btn-default" value="show/hide" id="restartPlaceholder">START OVER</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>	
+</div>
+</div>
+
+			
+	<!--jQuery CDN-->
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+	<!--Java script -->
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
+
+</body>
+</html>

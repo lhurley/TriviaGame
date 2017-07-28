@@ -1,0 +1,327 @@
+* {
+	border-radius: 0;
+}
+body
+	{
+	width: 960px;
+	margin: 0 auto;
+	background-color: #f2f2f2;	
+	font-family: 'Open Sans', sans-serif;
+	}
+
+.button {
+    display: inline-block;
+    position: relative;
+    margin: 1em;
+    border: none;
+    padding: 0.67em;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 2em;
+    outline: none;
+    color: #FFF;
+    background: transparent;
+    font-family: 'raleway', sans-serif;
+}
+
+.button span h2{
+    -webkit-transition: 0.6s;
+    -moz-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+    -webkit-transition-delay: 0.2s;
+    -moz-transition-delay: 0.2s;
+    -o-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.button:before,
+.button:after {
+    content: '';
+    position: absolute;
+    top: 0.67em;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: .4s,opacity .6s;
+    -moz-transition: .4s,opacity .6s;
+    -o-transition: .4s,opacity .6s;
+    transition: .4s,opacity .6s;
+}
+
+/* :before */
+
+.button:before {
+    content: attr(data-hover);
+    -webkit-transform: translate(-150%,0,150%,0);
+    -moz-transform: translate(-130%,0,150%,0);
+    -ms-transform: translate(-120%,0,150%,0);
+    -o-transform: translate(-110%,0,150%,0);
+    transform: translate(-150%,0,150%,0);
+    margin-top: 100pt;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1pt;
+	font-size: 9pt;
+}
+
+/* :after */
+
+.button:after {
+    content: attr(data-active);
+    -webkit-transform: translate(150%,0);
+    -moz-transform: translate(150%,0);
+    -ms-transform: translate(150%,0);
+    -o-transform: translate(150%,0);
+    transform: translate(150%,0);
+}
+
+/* Span on :hover and :active */
+
+.button:hover span,
+.button:active span {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -moz-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    -o-transform: scale(0.3);
+    transform: scale(0.3);
+}
+
+/*  
+    We show :before pseudo-element on :hover 
+    and :after pseudo-element on :active 
+*/
+
+.button:hover:before,
+.button:active:after {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+    -webkit-transition-delay: .4s;
+    -moz-transition-delay: .4s;
+    -o-transition-delay: .4s;
+    transition-delay: .4s;
+}
+
+/* 
+  We hide :before pseudo-element on :active
+*/
+
+.button:active:before {
+    -webkit-transform: translate(-150%,0);
+    -moz-transform: translate(-150%,0);
+    -ms-transform: translate(-150%,0);
+    -o-transform: translate(-150%,0);
+    transform: translate(-150%,0);
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+
+h2 {
+	font-size: 120pt;
+	font-family: 'Montserrat Alternates', sans-serif;
+	font-style: bold;
+	color: #f2f2f2;
+	margin-top: -.25em;
+}
+
+
+.jumbotron h2:hover {
+	color: #f9f9d4;
+}
+
+.jumbotron a:hover {
+	text-decoration: none;
+}
+
+h4 {
+	padding-top: 25pt;
+	padding-bottom: -10pt;
+	font-family: 'Open Sans', sans-serif;
+	color: #a5a5a5;
+	letter-spacing: 1pt;
+	font-size: 9pt;
+}
+
+#tg-user-choices {
+	font-family: 'Open Sans', sans-serif;
+	color: #a5a5a5;
+	letter-spacing: 1pt;
+	font-size: 12pt;
+}
+
+.panel-default{
+	background-color: #f7f7f7;
+	margin-top: -22pt;
+	border: 1pt #d8d6d6;
+	height: 25em;
+	padding-top: 2em;
+	padding-left: 6em;
+	line-height: 3em;
+	color: #a5a5a5;
+	bottom: 0;
+}
+
+.panel .panel-default .panel2 {
+ background-color: #f9f9d4;
+}
+
+.jumbotron {
+	background-color: #d8d6d6;
+}
+
+.tg-hidden {
+	display: none;
+}
+
+.tg-games-info {
+  text-align: center;
+	float: left;
+	display: inline-block;
+	width: 30%;
+	padding: 4px;
+	margin: 4px;
+	border: 3px solid #4aaaa5;
+  	background-color: #4aaaa5
+}
+
+.btn-primary {
+	background-color: #d8d6d6;
+	color: #f7f7f7;
+	border: 1pt #d8d6d6;
+	border-radius: 0;
+	width: 8em;
+	font-size: 10pt;
+	margin-top: 3em;
+}
+
+.btn-primary:hover {
+	background-color: #f9f9d4;
+	color: #d8d6d6;
+	border: 5pt;
+	border-color: #f2f2f2;
+}
+  
+.after-box {
+	margin-top:10px;	
+	clear: both;
+}
+
+.heading {
+  text-align: center;
+	padding: 4px;
+	margin: 4px;
+	border: 4px;
+  text-shadow: 3px 2px red;
+  font-size: 200%;
+  background-color: grey;
+}
+
+.games_players_info {
+  text-align: center;
+	float: left;
+	display: inline-block;
+	width: 30%;
+	padding: 4px;
+	margin: 4px;
+	border: 3px solid #4aaaa5;
+  background-color: #4aaaa5;
+}
+
+#no-of-players
+{
+}
+#no-of-turns
+{
+	
+}
+#no-of-guesses
+{
+	
+}
+
+#word-in-play
+{
+  text-align: center;
+	padding: 4px;
+	margin: 4px;
+	border: 4px;
+  font-size: 200%;
+	
+}
+.timing
+{
+	text-size: 150%;
+}
+
+.player-data
+{
+	float: left;
+	display: inline-block;
+	width: 22%;
+	padding: 4px;
+	margin: 4px;
+	border: 4px;
+}
+.player-wins
+{
+	
+}
+.player-name
+{
+	color: red;
+}	
+.hide-player
+{
+	display: none;
+}
+#play-area
+{
+	
+}
+#player1
+{
+	
+}
+#player2
+{
+	
+}
+#player3
+{
+	
+}
+#player4
+{
+	
+}
+.current-player
+{
+	background-color: blue;
+}
+.tile
+{
+  float: left;
+  display; inline-block;
+}
+#panel-default
+{
+	background-image: url("The_Lord_of_the_Rings_Characters.jpg");
+	color: red;
+}
+.hide-div
+{
+	display: none;
+}
+.hide-tile
+{
+	display: none;
+}
+
